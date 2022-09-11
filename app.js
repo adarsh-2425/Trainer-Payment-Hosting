@@ -11,10 +11,10 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended : true}))
 
 const path = require('path');
+app.use(express.static('./dist/front-end'));
 
 
 app.get('/api/users',function(req,res){
-  app.use(express.static('./dist/front-end'));
     
     UserData.find()
                 .then(function(users){
